@@ -1,7 +1,8 @@
+import sys
 import random # сортировка вставками сортировка выбором
 import time
 
-numbers = 8000
+numbers = 4000
 max_r = 100000
 t = 10
 t_time = 0
@@ -62,14 +63,14 @@ def insertion_sort(a): # вставками
 
 def sort_select(list_):
     c = []
-    m = 10**64
+    m = sys.maxsize
     for i in range(len(list_)):
         for j in list_:
             if j < m:
                 m = j
         c.append(m)
         list_.remove(m)
-        m = 10**64
+        m = sys.maxsize
     return c
                 
 def test(f):
